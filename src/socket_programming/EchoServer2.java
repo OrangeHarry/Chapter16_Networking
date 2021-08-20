@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class EchoServer {
+public class EchoServer2 {
 	public static void main(String[] args) throws IOException {
 
 		ServerSocket server = new ServerSocket(7761);
@@ -18,9 +18,14 @@ public class EchoServer {
 		System.out.println("클라이언트 연결완료");
 		// 클라이언트 IP주소
 		System.out.println(socket.getInetAddress());
-
+		
+		//읽어오는 스트림
 		InputStream in = socket.getInputStream();
 		DataInputStream dis = new DataInputStream(in);
+		
+		//쓰는 스트림
+		OutputStream out = socket.getOutputStream();
+		DataOutputStream dos = new DataOutputStream(out); 
 
 		while (true) {
 			String userMessage = dis.readUTF();
@@ -29,13 +34,14 @@ public class EchoServer {
 			if (userMessage.equalsIgnoreCase("exit")) {
 				break;
 			}
+			
+			//받은 메시지를 다시 전송
+			dos.writeUTF(userMessage);
+			dos.flush();
 		}
-
-		// OutputStream out = socket.getOutputStream();
-		// DataOutputStream dos = new DataOutputStream(out); //빨대를 두개를 꽂았네
-
 		dis.close();
 		in.close();
+		dos.close();
 
 		socket.close();
 		server.close();
