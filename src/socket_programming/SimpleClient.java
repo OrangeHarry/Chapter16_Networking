@@ -1,4 +1,4 @@
-package soket_programming;
+package socket_programming;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,3 +23,5 @@ public class SimpleClient {
 		System.out.println("클라이언트 종료");
 	}
 }
+//cmd에서 ipconfig를 치면 나의 IP주소를 알수있다.
+//cmd에서 ping google.com 을 치면 내 네트워크상태가 잘 되는지 확인이가능하다

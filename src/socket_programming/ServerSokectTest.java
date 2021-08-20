@@ -1,4 +1,4 @@
-package soket_programming;
+package socket_programming;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -6,6 +6,8 @@ import java.net.Socket;
 
 public class ServerSokectTest {
 	public static void main(String[] args) {
+		
+		String str = "안녕하세요? 반갑습니다 :)";
 
 		try {
 			ServerSocket serverSocket = new ServerSocket(7762);// 임의로 넣어준값(그래도 1024 밑의 숫자를 쓰면 안됨)
