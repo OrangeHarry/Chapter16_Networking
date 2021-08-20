@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class SimpleClient {
 	public static void main(String[] args) throws IOException, IOException {
 
-		Socket socket = new Socket("192.168.0.80", 8111);
+		Socket socket = new Socket("192.168.0.80", 7761);
 		System.out.println("서버연결 완료");
 
 		InputStream in = socket.getInputStream();
