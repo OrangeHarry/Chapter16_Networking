@@ -11,7 +11,7 @@ import java.net.Socket;
 public class EchoServer2 {
 	public static void main(String[] args) throws IOException {
 
-		ServerSocket server = new ServerSocket(7761);
+		ServerSocket server = new ServerSocket(7254);
 		System.out.println("서버 준비 완료");
 
 		Socket socket = server.accept();

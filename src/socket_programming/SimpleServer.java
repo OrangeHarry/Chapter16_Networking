@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class SimpleServer {
 	public static void main(String[] args) throws IOException {
-		ServerSocket serverSocket = new ServerSocket(7761);
+		ServerSocket serverSocket = new ServerSocket(8000);
 		System.out.println("서버 준비 완료");
 		
 		Socket socket = serverSocket.accept();

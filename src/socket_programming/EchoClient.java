@@ -1,19 +1,16 @@
 package socket_programming;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Scanner;
 
 //클라이언트가 서버로 메시지를 보내
 public class EchoClient {
 	public static void main(String[] args) throws IOException, IOException {
 
-		Socket socket = new Socket("192.168.0.80", 7761); // local host로 쳐도 된다.
+		Socket socket = new Socket("192.168.0.101", 8000); // local host로 쳐도 된다.
 		System.out.println("서버연결 완료");
 
 		OutputStream out = socket.getOutputStream();
