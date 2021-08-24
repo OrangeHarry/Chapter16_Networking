@@ -32,7 +32,7 @@ public class AppServer extends TcpApplication {
 		
 		try {
 			//1.서버 소켓 생성
-			serverSocket = new ServerSocket(PORT); //TcpApplication.PORT라고 써줘도 된다.
+			serverSocket = new ServerSocket(TcpApplication.PORT); //TcpApplication.PORT라고 써줘도 된다.
 
 			//2.클라이언트와 연결된 소켓 관리
 			while(true) {
