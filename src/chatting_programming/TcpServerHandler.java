@@ -98,9 +98,26 @@ public class TcpServerHandler implements Runnable {// 스레드를 만들꺼야 고객 하�
 
 	/*
 	 * 귓속말 메소드
+	 * name = 보내는 클라이언트 id
+	 * message = 보낼 메세지( ex)/to id 뭐 하니??) 
 	 */
 	private void whisper(String name, String massage) {
-
+		int start = massage.indexOf(" ") + 1; // 시작위치는 첫 공백의 +1이라는 의미
+		int end = massage.indexOf(" ", start); // start위치부터 다음 공백이 나오는 위치 String API찾아봐
+		
+		if(end != -1) {
+			// id = 보낼 클라이언트 id
+			String id = massage.substring(start, end);// 첫점과 끝점을 알려줌
+			String secret = massage.substring(end + 1);//end부터 문자열 끝까지 추출한다. (end+1)을 한 문자열로 보기때문에
+			
+			//sendMap으로부터 해당 키<id>에 해당하는 PrintWriter객체를 얻어온다.
+			PrintWriter pw = TcpServerHandler.sendMap.get(id);
+			//보낼 메세지 전송
+			if(pw != null) {
+				pw.println(name + "님의 귓속말 : "+ secret);
+				pw.flush();
+			}
+		}
 	}
 
 	/*

@@ -6,14 +6,20 @@ import com.framework.TcpApplication;
 
 public class TcpServer {
 	public static void main(String[] args) {
-		//그냥 ui 깔끔하게 해주는용도
-		for(int i=0; i<20; i++) {
+		// 그냥 ui 깔끔하게 해주는용도
+		for (int i = 0; i < 15; i++) {
 			System.out.println("");
 		}
 		
 		Scanner sc = new Scanner(System.in);
 		
 		showMenu();
+		
+		// 그냥 ui 깔끔하게 해주는용도
+		for (int i = 0; i < 15; i++) {
+			System.out.println("");
+		}
+		
 		System.out.print("            >");
 		int select = sc.nextInt();
 		

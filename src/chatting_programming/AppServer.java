@@ -46,6 +46,7 @@ public class AppServer extends TcpApplication {
 				 * 접속자 수만큼 스레드가 생성된다.
 				 */
 				th = new Thread(new TcpServerHandler(clientSocket));
+				th.start(); //무조건 start를 해줘야지!!
 			}
 			
 			
